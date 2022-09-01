@@ -4,5 +4,7 @@ group
 chown betty hello
 touch
 chmod u+x hello
-chmod u=rwx,g=r+x,o=r--
-chmod rwx r-x r+x
+chmod u=rwx,g=r+x,o=r-- hello
+chmod a+x hello
+chmod 007 hello
+ls -lah hello
