@@ -7,4 +7,5 @@ chmod u+x hello
 chmod u=rwx,g=r+x,o=r-- hello
 chmod a+x hello
 chmod 007 hello
-ls -lah hello
+chmod 753 hello
+
