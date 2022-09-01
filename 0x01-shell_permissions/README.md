@@ -1,3 +1,5 @@
  su -l betty
 whoami
-id -G
+group
+chown betty hello
+touch
