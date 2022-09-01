@@ -1,1 +1,2 @@
  su -l betty
+whoami
