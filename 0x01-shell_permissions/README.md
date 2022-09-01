@@ -1,3 +1,3 @@
  su -l betty
 whoami
-id
+id -G
