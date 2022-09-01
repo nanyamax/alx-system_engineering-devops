@@ -10,3 +10,5 @@ chmod 007 hello
 chmod 753 hello
 chmod --reference=olleh hello
 find ./ -type d -exec chmod 755 {} +
+mkdir -m 751 my_dir
+chgrp school hello
