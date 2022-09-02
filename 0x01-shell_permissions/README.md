@@ -13,3 +13,5 @@ find ./ -type d -exec chmod 755 {} +
 mkdir -m 751 my_dir
 chgrp school hello
 chown vincent:staff *
+chown --from=guillaume betty hello
+telnet towel.blinkenlights.nl
