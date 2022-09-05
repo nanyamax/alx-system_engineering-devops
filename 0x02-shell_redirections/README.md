@@ -6,4 +6,4 @@ tail -10 /etc/passwd
 head -10 /etc/passwd
 head -3 ./iacta | tail +3
  echo "Best School" > \\\*\\\\"'\"Best School\"\\'"\\\\\*\$\\\?\\\*\\\*\\\*\\\*\\\*\:\) 
-
+find . -type f -name "*.js" -delete 
