@@ -12,3 +12,5 @@ find . -type f -name "*.js" -delete
 find . -mindepth 1 -type d | wc -l
 ls -1t|head -n10
 sort | uniq -u
+grep "root" /etc/passwd
+grep -c "bin" /etc/passwd
