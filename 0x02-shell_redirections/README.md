@@ -19,3 +19,5 @@ grep -v "bin" /etc/passwd
 grep ^[[:alpha:]] /etc/ssh/sshd_config 
 
 tr -d [cC]
+
+cut -d ':' -f 1,6 /etc/passwd | sort  
