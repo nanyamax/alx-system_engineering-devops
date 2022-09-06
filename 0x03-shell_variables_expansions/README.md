@@ -6,4 +6,5 @@ task 4- printenv
 task 5- set|less
 task 6- export BEST="School" 
 task 7- export BEST="School"
-task 8- echo $(($TRUEKNOWLEDGE+128))  
+task 8- echo "$((128+($TRUEKNOWLEDGE)))"
+task 9- echo $(($POWER / $DIVIDE)  
