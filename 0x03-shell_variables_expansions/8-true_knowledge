@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$(($(TRUEKNOWLEDG)E+128))"
+echo "$((($TRUEKNOWLEDG)E+128))"
