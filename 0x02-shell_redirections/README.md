@@ -22,5 +22,6 @@ tr -d [cC]
 rev
 cut -d ':' -f 1,6 /etc/passwd | sort
 find . -empty | rev | cut -d '/' -f 1 | rev
+echo ' cut -c1 | paste -s | tr -d "[:blank:]" ' >> 'filename
 
 cut -d '/' -f 1 | revo -e '#!/bin/bash\ntail -n +2 | cut -f -1 | sort -k 1 | uniq -c | sort -rnk 1 | head -n 11 | rev | cut -d ' ' -f -1 | rev' > 103-the_biggest_fan  
