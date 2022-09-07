@@ -12,4 +12,5 @@ task 10- echo $(($BREATH**LOVE))
 task 11- echo $((2#$BINARY))
 task 12- echo {a..z}{a..z} | tr " " "\n" | grep -v "oo"
 task 13- printf "%.2f" $NUM | sort
-task 14-  printf '%x\n' $DECIMAL   
+task 14-  printf '%x\n' $DECIMAL
+task 15- $(echo {A..M}) | tr -d ' '`     
