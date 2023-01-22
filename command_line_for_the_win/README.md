@@ -1,0 +1,1 @@
+CMD Challenge is a cool game that test bash skills. it was fun to play, the more you answer the harder the questions.
