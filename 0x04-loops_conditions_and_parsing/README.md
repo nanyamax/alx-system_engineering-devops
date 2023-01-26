@@ -1,0 +1,1 @@
+the concept of loop in bash isn't that different from other programming language
