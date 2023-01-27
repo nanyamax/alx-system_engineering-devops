@@ -1,0 +1,1 @@
+Advanced Bash script - Processes and signals
