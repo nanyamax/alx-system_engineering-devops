@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# displays the content of a file
+file=/etc/passwd
+while IFS=: read -r user uid home shell
+do
+    echo "User $user ($uid) assigned \"$home\" home directory with $shell shell."
+done < "$file"
