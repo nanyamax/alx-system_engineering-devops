@@ -2,11 +2,19 @@
 # displays ssh public key
 
 ---- BEGIN SSH2 PUBLIC KEY ----
+
 Comment: "rsa-key-20230127"
+
 AAAAB3NzaC1yc2EAAAADAQABAAABAQC6WhRb2cu8pefUu9m5YdpWw33j+dO8WlT4
+
 mlJKrOmHOnDDGx3izDqM72mxtjpzQ7G9rzlv4ZbWrQgu7IVY4R4HzjT7iMeFEEXg
+
 ddS6iSmE4umbzeD6wHD3orfFrqJEq5Vb3nq/2iaQh0gzy7n7rvw6F5nMJhyC7eWq
+
 NBK7pqAcnr+Qa24eiIcmHq1dOEOBbLO778skxK4qzF7db86+P5lLgaw2melncpxk
+
 wRg8lVNfqXNxR7+3MJhI58ePEJbmkNN0imUpNAtlEx+spRGkOkqfcU+9oCH9EK3B
+
 7MVqRESwtU8s6FiYRVd4/u8+SRT1cFGCVAbO8uLJilualX0UOXvJ
+
 ---- END SSH2 PUBLIC KEY ----
