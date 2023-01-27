@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# kills a file process
+SIGKILL 7-highlander
