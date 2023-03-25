@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# displays the PID along with process name
-pidof user 'bash'

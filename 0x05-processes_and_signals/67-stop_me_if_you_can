@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# stops a file process without using kill
-pkill 7-highlander
