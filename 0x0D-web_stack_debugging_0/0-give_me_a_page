@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#using apache on docker to return a page
+echo "ServerName localhost" >> /etc/apache2.conf
+service apache2 start
