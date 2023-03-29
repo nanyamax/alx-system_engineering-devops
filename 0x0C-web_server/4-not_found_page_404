@@ -2,7 +2,6 @@
 #configuring nginx 404 page
 
 sudo apt-get -y update
-sudo chown -R "$USER":"$USER" /var/www/html/
 sudo apt-get install -y nginx
 
 sudo echo "Ceci n'est pas une page" > /var/www/html/index.html;
