@@ -6,7 +6,7 @@ apt-get install -y nginx
 mkdir /var/www/html/mysite
 touch /var/www/html/mysite/index.html
 echo "Hello World" > /var/www/html/mysite/index.html
-sudo printf %s "server {
+echo "server {
      listen      80;
      listen      [::]:80;
      root        /var/www/html/mysite/;
