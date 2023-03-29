@@ -4,12 +4,12 @@ apt-get update
 apt-get install -y nginx
 
 mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
-echo "Hello World" > /etc/nginx/html/index.html
+touch /etc/testfile/html/index.html
+echo "Hello World" > /etc/testfile/html/index.html
 printf %s "server {
      listen      80 default_server;
      listen      [::]:80 default_server;r
-     root        /etc/nginx/html/;
+     root        /etc/testfile/html/;
      index       index.html index.htm;
 }
 " > /etc/nginx/sites-available/default
