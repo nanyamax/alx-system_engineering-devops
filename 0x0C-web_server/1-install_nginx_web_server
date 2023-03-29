@@ -14,5 +14,5 @@ printf %s "server {
 }
 " 
 
- sudo nginx -s reload
+ sudo service nginx restart
 
