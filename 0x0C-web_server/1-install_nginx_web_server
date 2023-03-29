@@ -12,7 +12,7 @@ printf %s "server {
      root        /var/www/html/mysite/;
      index       index.html index.htm;
 }
-" > /var/www/html/mysite/
+" 
 
  sudo nginx -s reload
 
