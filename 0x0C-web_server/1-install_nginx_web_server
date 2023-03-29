@@ -10,8 +10,6 @@ printf %s "server {
      listen      80 default_server;
      listen      [::]:80 default_server;r
      root        /etc/testfile/html/;
-     server_name nginx-test.test
-     return 200 "Hello World";
      index       index.html index.htm;
 }
 " > /etc/nginx/sites-available/default
