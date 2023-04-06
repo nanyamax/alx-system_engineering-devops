@@ -2,9 +2,9 @@
 class { 'nginx': }
 
 # Configure Nginx server
-nginx::resource::server { 'example.com':
+nginx::resource::server { 'HOSTNAME':
   listen_port => 80,
-  server_name => 'example.com',
+  server_name => 'HOSTNAME',
   location    => {
     '/'           => {
       content => 'Hello World!',
