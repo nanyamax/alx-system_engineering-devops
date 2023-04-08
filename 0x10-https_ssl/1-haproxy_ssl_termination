@@ -1,0 +1,16 @@
+frontend www-http
+    bind *:80
+    reqadd X-Forwarded-Proto:\ http
+    default_backend www-backend
+
+frontend www-https
+    bind *:443 ssl crt /etc/letsencrypt/live/www.nanyamax.tech/fullchain.pem
+    reqadd X-Forwarded-Proto:\ https
+    default_backend www-backend
+
+backend www-backend
+    balance roundrobin
+    server web-01 35.168.2.229:80 check
+    server web-02 54.174.36.98:80 check
+
+
