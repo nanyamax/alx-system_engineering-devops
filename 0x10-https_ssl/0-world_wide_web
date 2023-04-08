@@ -1,31 +1,17 @@
 #!/bin/env bash
 #configuring domain zone/load balancing
-
-# function to retrieve DNS records for a domain and subdomain
-function get_dns_records() {
-  local domain="$1"
-  local subdomain="$2"
-  if [ -n "$subdomain" ]; then
-    dig +short "$subdomain.$domain" | awk -v subdomain="$subdomain" '{printf "The subdomain %s is a %s record and points to %s\n", subdomain, "A", $0}'
-  else
-    for subdomain in "www" "lb-01" "web-01" "web-02"; do
-      dig +short "$subdomain.$domain" | awk -v subdomain="$subdomain" '{printf "The subdomain %s is a %s record and points to %s\n", subdomain, "A", $0}'
-    done
-  fi
+domain_information () {
+    line=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
+    echo "$2 $line" | awk '{print "The subdomain " $1 " is a " $2 " record and points to " $3}'
 }
 
-# check for domain parameter
-if [ -z "$1" ]; then
-  echo "Usage: $0 <domain> [subdomain]"
-  exit 1
+if [ "$#" == 1 ]
+then
+  domain_information "$1" "www"
+  domain_information "$1" "lb-01"
+  domain_information "$1" "web-01"
+  domain_information "$1" "web-02"
+elif [ "$#" == 2 ]
+then
+  domain_information "$1" "$2"
 fi
-
-# check for subdomain parameter
-if [ -n "$2" ]; then
-  # display DNS records for specified subdomain
-  get_dns_records "$1" "$2"
-else
-  # display DNS records for default subdomains
-  get_dns_records "$1"
-fi
-
