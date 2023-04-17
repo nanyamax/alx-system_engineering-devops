@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Installs Nginx with the following configurations:
+#+    Listens on port 80.
+#     Contains a custom HTTP header named X-Served-By
+#     Value of the HTTP header is the hostname of the running sever
+
+sudo apt-get update
+sudo apt install -y nginx
+
+sudo bash -c "echo 'server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    add_header X-Served-By \$HOSTNAME;
+    root /var/www/html;
+    index index.html index.htm;
+
+}' > /etc/nginx/sites-available/default"
+sudo service nginx restart

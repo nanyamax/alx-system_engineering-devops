@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+#install and configure HAproxy
+
+sudo apt update
+sudo apt install -y haproxy
+
+sudo tee /etc/haproxy/haproxy.cfg > /dev/null <<EOF
+defaults
+    mode http
+    timeout connect 5000ms
+    timeout connect 5000ms
+    timeout client 50000ms
+    timeout server 50000ms
+
+frontend http-in
+    bind *:80
+    default_backend servers
+
+backend servers
+    mode http
+    balance roundrobin
+    server 116408-web-01 35.168.2.229:80 check
+    server 116408-web-02 54.174.36.98:80 check
+EOF
+
+sudo systemctl enable haproxy
+sudo systemctl start haproxy
+
+
+if [ -f "/lib/systemd/system/haproxy.service" ]; then
+    sudo systemctl enable haproxy
+    echo "HAproxy has a systemd service file and has been enabled to start on boot."
+else
+    echo "HAproxy does not have a systemd service file. Please create a systemd service file for HAproxy."
+fi
+
+echo "HAproxy has been configured to use round-robin load balancing between web servers."
