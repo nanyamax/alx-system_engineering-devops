@@ -4,7 +4,7 @@
 sudo apt update
 sudo apt install -y haproxy
 
-SERVER_CONFIG="\ 
+SERVER_CONFIG=" 
 frontend http-in
     bind *:80
     default_backend servers
