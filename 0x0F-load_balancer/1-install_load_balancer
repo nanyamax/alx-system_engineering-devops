@@ -4,17 +4,17 @@
 sudo apt update
 sudo apt install -y haproxy
 
-sudo bash -c "echo 
-'frontend http-in
+SERVER_CONFIG="\ 
+frontend http-in
     bind *:80
     default_backend servers
 
 backend servers
     balance roundrobin
     server 116408-web-01 35.168.2.229:80 check
-    server 116408-web-02 54.174.36.98:80 check'
+    server 116408-web-02 54.174.36.98:80 check"
 
->> /etc/haproxy/haproxy.cfg"
+sudo bash -c "echo -e '$SERVER_CONFIG' >> /etc/haproxy/haproxy.cfg"
 
 sudo systemctl enable haproxy
 sudo systemctl start haproxy
