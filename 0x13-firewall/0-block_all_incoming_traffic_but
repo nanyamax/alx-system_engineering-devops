@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#uncomplicated firewall setup
+
+sudo apt update
+sudo apt install ufw
+
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+sudo ufw allow 22/tcp
+sudo ufw allow http 
+sudo ufw allow https
