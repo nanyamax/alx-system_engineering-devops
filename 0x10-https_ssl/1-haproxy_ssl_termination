@@ -7,8 +7,6 @@ global
 	user haproxy
 	group haproxy
 	daemon
-	maxconn 2048
-	tune.ssl.default-dh-param 2048
 
 	# Default SSL material locations
 	ca-base /etc/ssl/certs
@@ -38,23 +36,17 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-frontend www-http
+frontend http-in
 	 bind *:80
-	 reqadd X-Forwarded-Proto:\ http
-	 default_backend www-backend
+	 redirect scheme https,code 301 if !{ ssl_
 
-frontend www-https
-	 bind *:443 ssl crt /etc/haproxy/certs/
-	 reqadd X-Forwarded-Proto:\ https
-	 acl letsencrypt-acl path_beg /.well-known/acme-challenge/
-	 use_backend letsencrypt-backend if letsencrypt-acl
-	 default_backend www-backend
+frontend https-in
+	 bind *:443 ssl crt /etc/haproxy/certs/www.nanyamax.tech.pem
+	 mode http
+	 stats uri /haproxy?stats
+	 default_backend servers
 
-backend www-backend
-	redirect scheme https if !{ ssl_fc }
+backend servers
 	balance roundrobin
 	server 116408-web-01 35.168.2.229:80 check
 	server 116408-web-02 54.174.36.98:80 check
-
-backend letsencrypt-backend
-	server letsencrypt 127.0.0.1:54321

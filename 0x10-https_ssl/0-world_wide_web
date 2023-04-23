@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 #configuring domain zone/load balancing
 domain_information () {
     line=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
