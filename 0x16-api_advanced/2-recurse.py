@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Recursive function that returns a list of all hot posts"""
+"""
+Recursive function that returns a list of all hot posts
+"""
 import requests
 
 
@@ -11,7 +13,8 @@ def recurse(subreddit, hot_list=[], after="", count=0):
         "count": count,
         "limit": 100
     }
-    response requests.get(url, headers=headers, params=params, allow_redirections=False)
+    response requests.get(url, headers=headers, params=params,
+        allow_redirections=False)
     if response.status_code == 404:
         return None
 
