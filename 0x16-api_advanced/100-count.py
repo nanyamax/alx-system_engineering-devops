@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""
+Recursive function that prints a sorted count of given keywords
+"""
 import requests
 
 
@@ -26,4 +30,4 @@ def count_words(subreddit, word_list, after=None, word_count={}):
         else:
             return count_words(subreddit, word_list, after, word_count)
     else:
-        print(None) 
+        print(None)
